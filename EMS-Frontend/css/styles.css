@@ -1,0 +1,645 @@
+/* Page Background */
+body.login-bg{
+    
+   font-family: 'Poppins', sans-serif;
+    background: linear-gradient(to right,#01236c,#3b82f6);
+    margin:0;
+}
+
+body .app-bg{
+      font-family: 'Poppins', sans-serif;
+    background-color: #f4f6f9;
+    margin:0;
+}
+/* Authentication Page */
+/* Container */
+.auth-container{
+    width:100%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height: 100vh;
+}
+
+/* Card */
+.auth-card{
+    background:#ffffff;
+    width:380px;
+    padding:30px;
+    border-radius:12px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.15);
+}
+.lock-icon{
+  display:inline-flex;
+  justify-content:center;
+  align-items:center;
+  width:45px;
+  height:45px;
+  background:#3b82f6;
+  color:white;
+  border-radius:10px;
+  font-size:22px;
+}
+.lock-icon i{
+    color: white;
+}
+/* Heading */
+.auth-card h4{
+    font-weight:600;
+    color:#333;
+}
+
+.auth-card h5{
+    color:black;
+    font-size: 19px;
+    margin-bottom:10px;
+}
+
+
+/* Labels */
+.auth-card label{
+    font-size:14px;
+    font-weight:500;
+}
+
+
+/* Input group */
+.input-group .form-control{
+    height:38px;
+}
+
+.input-group .input-group-text{
+    height:38px;
+    display:flex;
+    align-items:center;
+}
+.input-group{
+    display:flex;
+    align-items:center;
+    margin-bottom:10px;
+}
+
+.input-group-text{
+    background:#f1f1f1;
+    border:1px solid #ccc;
+    padding:8px 10px;
+    border-radius:6px 0 0 6px;
+}
+
+.form-control{
+    border:1px solid #ccc;
+    padding:6px;
+    width:100%;
+    border-radius:0 3px 3px 0;
+}
+
+/* Login Button */
+.btn-primary{
+    background:#3b82f6;
+    border:none;
+    border-radius:6px;
+    font-weight:500;
+    transition:0.3s;
+    /* height: 38px; */
+}
+
+.btn-primary:hover{
+    background:#2c5cc5;
+}
+
+/* Signup text */
+.auth-card a{
+    color:#3b82f6;
+    text-decoration:none;
+    font-weight:500;
+    cursor:pointer;
+}
+
+.auth-card a:hover{
+    text-decoration:underline;
+}
+
+.top-icon{
+  display:inline-flex;
+  justify-content:center;
+  align-items:center;
+  width:50px;
+  height:50px;
+  background:#3b82f6;
+  color:white;
+  border-radius:10px;
+  font-size:22px;
+}
+/* error message */
+.form-group {
+  margin-bottom: 8px; 
+}
+
+.input-group {
+  margin-bottom: 0 !important; 
+}
+
+.error-message {
+  font-size: 12px;
+  color: red;
+  margin: 0;            
+  padding: 0;
+  line-height: 1.2;
+}
+
+/* Navbar */
+
+.navbar{
+background:#1e3a5f;
+
+}
+
+.navbar-brand{
+color:white;
+font-weight:600;
+}
+
+.nav-tabs {
+  border-bottom: none;
+}
+
+.nav-tabs .nav-link {
+  border: none;
+  color: white;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.nav-tabs .nav-link.active {
+  background-color: #ffffff;
+  color: #1e3a5f;
+  border-radius: 6px;
+}
+
+
+/* DASHBOARD CARDS */
+
+.dashboard-card {
+  background: #fff;
+  padding: 15px;
+  border: 1px solid rgb(222, 218, 218);
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  gap: 15px;
+}
+
+/* Icon box */
+.icon-box {
+  width: 45px;
+  height: 45px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+}
+
+/* Left colored borders */
+.border-blue {
+  border-top: 4px solid #0d6efd;
+}
+
+.border-green {
+  border-top: 4px solid #198754;
+}
+
+.border-red {
+  border-top: 4px solid #dc3545;
+}
+
+.border-orange {
+  border-top: 4px solid #ffc107;
+}
+
+.dashboard-card h3 {
+  margin: 0;
+  font-weight: bold;
+}
+
+/* Section Cards */
+
+.section-card {
+  background: #fff;
+  border: 1px solid rgb(222, 218, 218);
+  border-radius: 10px;
+  padding: 15px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.progress {
+  background-color: #e9ecef;
+  border-radius: 10px;
+}
+/* Badge */
+.badge-custom {
+  height: 25px;         
+  display: flex;
+  align-items: center;  
+  justify-content: center; 
+  font-size: 12px;
+}
+
+.list-group-item {
+  border: none;
+  border-bottom: 1px solid #eee;
+}
+
+/* Progress */
+.progress {
+  height: 6px;
+  border-radius: 10px;
+}
+
+/* FILTER SECTION */
+
+.filter-bar{
+    background:white;
+    padding:15px;
+    border-radius:8px;
+    box-shadow:0 2px 6px rgba(0,0,0,0.05);
+}
+/* Container spacing */
+#statusFilter {
+    padding: 8px;
+   
+}
+
+/* Base button */
+.btn-filter {
+    flex: 1;
+    color: #6c757d;
+    font-size: 12px;
+    border-radius: 16px;
+    border :1px solid rgb(189, 186, 186);
+    transition: all 0.2s ease;
+}
+
+/* Active button */
+.btn-filter.active {
+    background: #2a6bdc;
+    color: white;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+/* Hover effect */
+.btn-filter:hover {
+    background: #e9ecef;
+}
+
+/* Table */
+.employee-table thead tr th {
+    background: #f8f9fc;
+    font-size: 12px;
+    text-transform: uppercase;
+    color: #6c757d;
+}
+
+/* Avatar */
+.avatar-circle {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: #2a6bdc;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+/* Department badges */
+.badge-dept {
+    padding: 6px 10px;
+    border-radius: 8px;
+    font-size: 12px;
+}
+
+/* Department colors */
+.engineering { background: #0d6efd; }
+.marketing { background: #ffc107; color: black; }
+.hr { background: #22bde8; }
+.finance { background: #198754; }
+.operations { background: #6c757d; }
+
+/* Status badges */
+.badge-status {
+    padding: 5px 10px;
+    border-radius: 8px;
+    font-size: 12px;
+}
+
+ .badge-status.active {
+    background: #28a745;
+}
+
+ .badge-status.inactive {
+    background: #dc3545;
+}
+
+/* Action buttons */
+.action-btns {
+    display: flex;
+    gap: 5px;
+}
+
+.action-btn {
+    border: none;
+    background: #f1f3f7;
+    padding: 6px 10px;
+    border-radius: 8px;
+    transition: 0.2s;
+}
+
+.action-btn:hover {
+    background: #e2e6ff;
+}
+
+.action-btn.delete {
+    color: red;
+}
+
+/* Sorting Icon */
+.sort-icon {
+  cursor: pointer;
+  margin-left: 0;
+}
+.action-btns {
+  display: flex;
+  gap: 5px;          
+  align-items: center;
+}
+.small-btn {
+  padding: 2px 6px;
+  font-size: 12px;
+  line-height: 1;
+}
+/* BUTTONS */
+
+.btn-sm{
+    padding:5px 8px;
+}
+
+/* MODAL */
+
+.modal-content{
+    border-radius:10px;
+}
+.add-header{
+    background: #1e3a5f;
+  color: #fff;
+  padding: 12px 18px;
+}
+.modal-header{
+    border-bottom:none;
+}
+
+
+/* ERROR MESSAGES */
+
+.error-message{
+    font-size:12px;
+    color:red;
+}
+
+/* View Modal */
+/* Modal box */
+.view-modal {
+  border-radius: 10px;
+  overflow: hidden;
+  border: none;
+}
+
+/* Header */
+.view-header {
+  background: #1e3a5f;
+  color: #fff;
+  padding: 12px 18px;
+}
+
+/* Avatar circle */
+#viewAvatar {
+  width: 50px;
+  height: 50px;
+  background: #2563eb;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 10px auto;
+  font-size: 22px;
+  font-weight: 600;
+}
+
+/* Name */
+.emp-name {
+  font-weight: 600;
+  margin-top: 10px;
+}
+
+/* Role badge */
+.role-badge {
+  background:#2563eb;
+  color: #e0ecff;
+  font-size: 12px;
+  padding: 5px 10px;
+  border-radius: 6px;
+}
+
+/* Labels */
+.label {
+  font-size: 11px;
+  color: #6b7280;
+  display: block;
+  margin-bottom: 3px;
+}
+
+/* Info values */
+.info-grid p {
+  font-size: 14px;
+  margin: 0;
+  font-weight: 500;
+}
+
+/* Salary highlight */
+.salary {
+  color: #2563eb;
+  font-weight: 600;
+}
+
+/* Status badge */
+.status-active {
+  background-color: #198754; /* green */
+  color: #fff;
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 12px;
+}
+
+.status-inactive {
+  background-color: #dc3545; /* red */
+  color: #fff;
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 12px;
+}
+
+/* Close button white */
+.btn-close-white {
+  filter: invert(1);
+}
+
+/* Delete Confirmation Modal */
+/* Modal box */
+.delete-modal {
+  border-radius: 10px;
+  overflow: hidden;
+  border: none;
+  width: 350px;
+  margin: auto;
+}
+
+/* Header */
+.delete-header {
+  background: #dc2626; /* red */
+  color: white;
+  padding: 12px 16px;
+}
+
+/* Icon */
+.delete-icon {
+  width: 60px;
+  height: 60px;
+  background: #fee2e2;
+  color: #dc2626;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 15px auto;
+  font-size: 26px;
+}
+
+/* Text */
+.delete-text {
+  font-size: 15px;
+  margin: 10px 0;
+  color: #333;
+}
+
+/* Warning */
+.delete-warning {
+  color: #9ca3af;
+  font-size: 12px;
+}
+
+/* Footer */
+.modal-footer {
+  border-top: none;
+  padding-bottom: 20px;
+}
+
+/* Buttons */
+.btn-danger {
+  background: #ef4444;
+  border: none;
+}
+
+.btn-danger:hover {
+  background: #dc2626;
+}
+
+/* Close button white */
+.btn-close-white {
+  filter: invert(1);
+}
+
+/* TOAST */
+
+#toastContainer .toast{
+    margin-top:10px;
+}
+
+/* Mobile Responsive */
+
+@media (max-width: 576px) {
+  .modal-dialog {
+    margin: 10px;
+  }
+
+  .modal-content {
+    border-radius: 10px;
+  }
+   
+#employeeTableBody td {
+    font-size: 10px;
+  }
+.employee-table thead tr th{
+    background: #f8f9fc;
+    font-size: 10px;
+    text-transform: uppercase;
+    color: #6c757d;
+}
+  .btn {
+    font-size: 10px;
+    padding: 4px 8px;
+  }
+  .addEmployeeBtnNavbar{
+    font-size: 10px;
+    
+  }
+  #department-breakdown{
+  margin-bottom:20px;
+}
+#addEmployeeBtnDashboard,#addEmployeeBtnTable{
+  font-size: 12px;
+}
+.avatar-circle {
+    width: 28px;
+    height: 28px;
+    font-size: 12px;
+    
+}
+#addEmployeeBtnNavbar{
+  font-size: 12px;
+}
+
+}
+@media (min-width: 576px) and (max-width: 991px) { 
+
+  #employeeTableBody td {
+    font-size: 12px;
+  }
+.employee-table thead tr th{
+    background: #f8f9fc;
+    font-size: 10px;
+    text-transform: uppercase;
+    color: #6c757d;
+}
+.btn {
+    font-size: 12px;
+    padding: 2px 8px;
+  }
+   #department-breakdown{
+  margin-bottom:20px;
+}
+#addEmployeeBtnDashboard,#addEmployeeBtnTable{
+  font-size: 14px;
+}
+.avatar-circle {
+    width: 30px;
+    height: 30px;
+    
+    font-size: 12px;
+    
+}
+#addEmployeeBtnNavbar{
+  font-size: 14px;
+}
+}

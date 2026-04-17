@@ -1,0 +1,45 @@
+# Visual Studio folder
+.vs/
+
+# Build folders
+bin/
+obj/
+
+# User specific files
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Logs
+*.log
+
+#node-modules
+node_modules/
+
+# ASP.NET Core
+appsettings.Development.json
+
+
+# Package folders
+node_modules/
+**/wwwroot/lib/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# NuGet
+
+*.nupkg
+packages/
+*.nuget.props
+*.nuget.targets
+project.assets.json
+
+# Test results
+TestResults/
+coverage/
+
+# Publish profiles (deployment configs)
+**/Properties/PublishProfiles/

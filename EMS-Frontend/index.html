@@ -1,0 +1,720 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Employee-Management-Dashboard</title>
+    <!-- Bootstrap CSS CDN Link -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- Bootstrap ICON LINK -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <!-- External CSS File -->
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+
+
+  <body class="login-bg">
+    
+    <!-- SIGNIN FORM -->
+
+    <div id="loginView" class="auth-container">
+      <div class="auth-card">
+        <h5 class="text-center mb-1 fw-bold">Employee Management System</h5>
+        <div class="text-center mb-2">
+          <span class="lock-icon">
+            <i class="bi bi-shield-lock text-white"></i>
+          </span>
+        </div>
+
+        <h5 class="text-center fw-bold">Welcome Back</h5>
+        <h6 class="text-center fs-6 text-secondary mb-3">
+          Sign in to your admin account
+        </h6>
+        <form id="loginForm">
+           <div class="form-group">
+          <label for="loginUsername">Username</label>
+          <div class="input-group">
+            <span class="input-group-text">
+              <i class="bi bi-person"></i>
+            </span>
+            <input class="form-control" id="loginUsername" placeholder="Username" />
+            </div>
+            <small
+              id="usernameError"
+              class="error-message"></small>
+          </div>
+          
+          <div class="form-group">
+            <label for="loginPassword">Password</label>
+         
+          <div class="input-group">
+            <span class="input-group-text">
+              <i class="bi bi-lock"></i>
+            </span>
+            <input
+              type="password"
+              id="loginPassword"
+              class="form-control"
+              placeholder="Password"
+            />
+          </div>
+           <small
+            id="passwordError"
+            class="error-message"></small>
+          </div>
+         
+
+          <button type="submit" class="btn btn-primary w-100 text-center">
+            <i class="bi bi-box-arrow-in-right ms-2"></i> Login
+          </button>
+
+          <h6 class="text-center mt-3 fs-6 text-secondary">
+            Don't have an account?
+            <a id="showSignup" href="#" class="text-decoration-underline"
+              >Sign up</a
+            >
+          </h6>
+          <small class="demo-user d-block text-center text-secondary fs-12px">Demo:admin/admin123</small>
+        </form>
+      </div>
+    </div>
+
+    <!-- SIGNUP FORM -->
+
+    <div id="signupView" class="auth-container d-none">
+      <div class="auth-card">
+        <h5 class="text-center mb-1 fw-bold">Employee Management System</h5>
+        <div class="text-center mb-3">
+          <span class="top-icon">
+            <i class="bi bi-person-plus text-white"></i>
+          </span>
+        </div>
+
+        <h5 class="text-center fw-bold">Create Account</h5>
+        <h6 class="text-center pt-0 text-secondary fs-6 mb-3">
+          Register a new admin account
+        </h6>
+        <form id="signupForm">
+         <div class="form-group">
+        <label for="signupUsername">Username</label>
+
+        <div class="input-group">
+          <span class="input-group-text">
+            <i class="bi bi-person"></i>
+          </span>
+          <input id="signupUsername" class="form-control" placeholder="Username" />
+        </div>
+
+        <small id="usernameError" class="error-message"></small>
+      </div>
+
+         <div class="form-group">
+          <label for="signupPassword">Password</label>
+          <div class="input-group">
+            <span class="input-group-text">
+              <i class="bi bi-lock"></i>
+            </span>
+            <input
+              type="password"
+              id="signupPassword"
+              class="form-control"
+              placeholder="Password"
+            />
+            
+          </div>
+         
+          <small
+          id="passwordError"
+          class="error-message"></small>
+          </div>
+        <div class="form-group">
+          <label for="confirmpassword">Confirm Password</label>
+          <div class="input-group">
+            <span class="input-group-text">
+              <i class="bi bi-lock-fill"></i>
+            </span>
+            <input
+              type="password"
+              id="confirmPassword"
+              class="form-control"
+              placeholder="Confirm Password"
+            />
+          
+          </div>
+          
+          <small
+          id="confirmPasswordError"
+          class="error-message"></small>
+          </div>
+
+          <button type="submit" class="btn btn-primary w-100">
+            <i class="bi bi-person-plus me-1"></i>Create Account
+          </button>
+
+          <p class="text-center mt-3 fs-6 text-secondary">
+            Already have account?
+            <a href="#" id="showLogin" class="text-decoration-underline"
+              >Login</a
+            >
+          </p>
+        </form>
+      </div>
+    </div>
+
+    
+<!-- Main Dashboard Content -->
+ 
+<div id="dashboardView" class="d-none">
+
+<!-- Navbar -->
+
+<nav id="mainNavbar" class="navbar navbar-expand-lg" style="background-color:#1e3a5f;">
+  <div class="container-fluid">
+
+    <!-- Brand -->
+    <a class="navbar-brand text-white" href="#">
+      <i class="bi bi-people-fill" style="color:rgb(99, 213, 251);"></i> EMS Dashboard
+    </a>
+
+    <!-- Hamburger Button -->
+    <button class="navbar-toggler text-white border-0" type="button"
+      data-bs-toggle="collapse" data-bs-target="#navbarContent">
+      <i class="bi bi-list fs-2 text-white"></i>
+    </button>
+
+    <!-- Collapsible Content -->
+    <div class="collapse navbar-collapse" id="navbarContent">
+
+      <!-- Tabs -->
+      <ul class="nav nav-tabs me-auto ms-lg-4 mt-2 mt-lg-0 flex-column flex-lg-row">
+
+  <li class="nav-item ">
+    <button class="nav-link active btn btn-sm text-start text-lg-center"
+      data-bs-toggle="tab"
+      data-bs-target="#dashboard"
+      type="button">
+      <i class="bi bi-speedometer2 me-1"></i> Dashboard
+    </button>
+  </li>
+
+  <li class="nav-item ">
+    <button class="nav-link btn btn-sm  text-start text-lg-center"
+      data-bs-toggle="tab"
+      data-bs-target="#employees"
+      type="button">
+      <i class="bi bi-people me-1"></i> Employees
+    </button>
+  </li>
+
+</ul>
+<div class="d-flex  flex-lg-row align-items-start align-items-lg-center gap-2 gap-lg-3 mt-3 mt-lg-0 ms-lg-auto">
+
+  <button id="addEmployeeBtnNavbar"
+    class="btn btn-primary btn-sm">
+    <i class="bi bi-plus-lg me-1"></i>
+    Add Employee
+  </button>
+
+  <div class="d-flex align-items-center text-center text-white">
+    <i class="bi bi-person-circle me-2"></i>
+    <span id="loggedInUser" style="color: rgb(148, 148, 244);"></span>
+  </div>
+
+  <button id="logoutBtn"
+    class="btn btn-outline-light btn-sm d-flex align-items-center text-nowrap">
+    <i class="bi bi-box-arrow-right me-1"></i>
+    Logout
+  </button>
+
+</div>
+   
+</nav>
+<!-- DASHBOARD-->
+
+<div class="container mt-4">
+  <div class="tab-content">
+ 
+<div id="dashboard" class="tab-pane fade show active ">
+
+<!-- Header -->
+<div class="d-flex justify-content-between align-items-center mb-3">
+  <div>
+    <h5 class="fw-bolder mb-0" style="color:#1e3a5f;"><i class="bi bi-speedometer2 me-1" style="color: blue;"></i>Dashboard</h5>
+    <small class="text-muted">Welcome back! Here's your workforce overview.</small>
+  </div>
+<button id="addEmployeeBtnDashboard" class="btn btn-primary btn-sm d-flex align-items-center ">
+  <i class="bi bi-plus-lg me-1"></i>
+  Add Employee
+</button>
+</div>
+
+<!-- Stats Cards -->
+<div class="row mb-6">
+
+  <!-- Total Employees -->
+  <div class="col-12 col-sm-6 col-lg-3 mb-4">
+    <div class="dashboard-card border-blue d-flex align-items-center">
+      <div class="icon-box bg-primary-subtle text-primary">
+        <i class="bi bi-people-fill"></i>
+      </div>
+      <div>
+        <h5 id="totalEmployees" class="mb-0 fw-bolder" style="color:#1e3a5f;" ></h5>
+        <small class="text-muted fw-bold fs-12">TOTAL EMPLOYEES</small>
+      </div>
+    </div>
+  </div>
+
+  <!-- Active -->
+  <div class="col-12 col-sm-6 col-lg-3 mb-4">
+    <div class="dashboard-card border-green d-flex align-items-center">
+      <div class="icon-box bg-success-subtle text-success">
+        <i class="bi bi-person-check-fill"></i>
+      </div>
+      <div>
+        <h5 id="activeEmployees" class="mb-0 fw-bolder" style="color: #198754;"></h5>
+        <small class="text-muted fw-bold fs-12">ACTIVE</small>
+      </div>
+    </div>
+  </div>
+
+  <!-- Inactive -->
+  <div class="col-12 col-sm-6 col-lg-3 mb-4">
+    <div class="dashboard-card border-red d-flex align-items-center">
+      <div class="icon-box bg-danger-subtle text-danger">
+        <i class="bi bi-person-x-fill"></i>
+      </div>
+      <div>
+        <h5 id="inactiveEmployees" class="mb-0 fw-bolder" style="color: #dc3545;"></h5>
+        <small class="text-muted fw-bold fs-12">INACTIVE</small>
+      </div>
+    </div>
+  </div>
+
+  <!-- Departments -->
+  <div class="col-12 col-sm-6 col-lg-3 mb-4">
+    <div class="dashboard-card border-orange d-flex align-items-center">
+      <div class="icon-box bg-warning-subtle text-warning">
+        <i class="bi bi-diagram-3-fill"></i>
+      </div>
+      <div>
+        <h5 id="departmentCount" class="mb-0 fw-bolder" style="color: #ffc107;"></h5>
+        <small class="text-muted fw-bold fs-12">DEPARTMENTS</small>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- Bottom Section -->
+<div class="row mb-6">
+
+  <!-- Department Breakdown -->
+  <div class="col-12  col-lg-6" id="department-breakdown">
+    <div class="section-card">
+      
+      <h6 class="fw-bold mb-3" style="color:#1e3a5f;"><i class="bi bi-bar-chart-line-fill" style="color: blue;margin-right: 5px;"></i>Department Breakdown</h6>
+
+        <!--  Dynamic Content -->
+  
+
+    <table class="table table-borderless align-middle ">
+      <thead>
+        <tr>
+          <th>Department</th>
+          <th class="text-center">Count</th>
+          <th>Distribution</th>
+          <th>%</th>
+        </tr>
+      </thead>
+      <tbody id="departmentBreakdown"></tbody>
+    </table>
+
+  </div>
+</div>
+
+  <!-- Recent Employees -->
+  <div class="col-12 col-lg-6">
+    <div class="section-card">
+      <div class="d-flex justify-content-between mb-3">
+        <h6 class="fw-bold" style="color:#1e3a5f;"><i class="bi bi-clock" style="color:blue;margin-right: 5px;"></i>Recent Employees</h6>
+        <small class="text-primary bg-lightgrey px-2 py-1 rounded fw-bold " style="background-color: #e8ebf0;">Last 5 Added</small>
+      </div>
+
+       <ul id="recentEmployees" class="list-group"></ul>
+    </div>
+  </div>
+
+</div>
+
+</div>
+
+<!-- EMPLOYEE TABLE -->
+
+<div id="employees" class="tab-pane fade container-fluid mt-3">
+ <!-- Header -->
+  <div class="d-flex justify-content-between align-items-center mb-3">
+    <div>
+      <h5 class="fw-bold mb-0" style="color:#1e3a5f;"><i class="bi bi-people me-1" style="color: blue;"></i> Employees</h5>
+      <small class="text-muted">Manage, search, filter and sort your workforce.</small>
+    </div>
+
+    <button id="addEmployeeBtnTable" class="btn btn-primary btn-sm" >
+      <i class="bi bi-plus-lg"></i> Add Employee
+    </button>
+  </div>
+
+  <!-- Filters -->
+  <div class="card p-3 shadow-sm">
+
+    <div class="row g-2 align-items-center">
+
+      <!-- Search -->
+      <div class="col-md-4">
+        <input id="searchInput"
+class="form-control"
+placeholder="Search by name or email..." />
+      </div>
+
+      <!-- Department -->
+      <div class="col-md-3">
+        <select id="departmentFilter"
+        class="form-select" 
+        ><option value="">All Departments</option>
+        <option>Engineering</option>
+        <option>Marketing</option>
+        <option>HR</option>
+        <option>Finance</option>
+        <option>Operations</option>
+        </select>
+      </div>
+
+      <!-- Status -->
+     <div class="col-md-3">
+  <div id="statusFilter" >
+
+    <button class="btn btn-filter active" data-status="">All</button>
+    <button class="btn btn-filter" data-status="Active">Active</button>
+    <button class="btn btn-filter" data-status="Inactive">Inactive</button>
+
+  </div>
+  </div>
+
+      <div class="col-md-2">
+       <small id="employeeCount" class="text-muted" style="font-size: 13px;"></small>
+      </div>
+
+    </div>
+
+  </div>
+    <div class="card shadow">
+      <div class="card-body">
+    <div class="table-responsive">
+        <table class="table align-middle employee-table mb-0">
+          <thead>
+            <tr>
+              <!-- <th>ID</th> -->
+              <th>Avatar</th>
+              <th>Name<i class="bi bi-arrows-vertical sort-icon" data-field="name"></i></th>
+
+              <th>Email</th>
+              
+              <th>Department</th>
+              <th>Designation</th>
+              <th>Salary <i class="bi bi-arrows-vertical sort-icon" data-field="salary"></i></th>
+              <th>Join Date<i class="bi bi-arrows-vertical sort-icon" data-field="joinDate"></i></th>
+              <th>Status</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+
+          <tbody id="employeeTableBody"></tbody>
+
+        </table>
+    </div>
+      </div>
+    </div>
+<div id="paginationContainer" class="mt-3 d-flex align-items-center justify-content-center gap-2 "></div>
+  </div>
+
+</div>
+</div>
+</div>
+
+<!-- ADD / EDIT EMPLOYEE MODAL -->
+
+
+<div class="modal fade" id="employeeModal">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content custom-modal">
+
+            <!-- Header -->
+            <div class="modal-header custom-header add-header">
+                <h5 id="employeeModalTitle" class="modal-title">Add Employee</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+            </div>
+                <input
+                    type="hidden"
+                    id="employeeId">
+            <!-- Body -->
+            <div class="modal-body">
+                <form id="employeeForm" class="row g-3">
+
+                    <div class="col-md-6">
+                        <label>First Name *</label>
+                        <input id="firstName" type="text" class="form-control" placeholder="e.g. Priya">
+                                                
+                        <small
+                        id="firstNameError"
+                        class="error-message"></small>
+                    </div>
+
+                    <div class="col-md-6">
+                        <label>Last Name *</label>
+                        <input id="lastName" type="text" class="form-control" placeholder="e.g. Prabhu">
+                        <small
+                          id="lastNameError"
+                          class="error-message"></small>
+                    </div>
+
+                    <div class="col-md-6">
+                        <label>Email Address *</label>
+                        <input id="email" type="email" class="form-control" placeholder="name@hexacore.com">
+                        <small
+                          id="emailError"
+                          class="error-message"></small>
+                    </div>
+
+                    <div class="col-md-6">
+                        <label>Phone Number *</label>
+                        <input id="phone" type="text" class="form-control" placeholder="10-digit number">                      
+                        <small
+                        id="phoneError"
+                        class="error-message"></small>
+                    </div>
+
+                    <div class="col-md-6">
+                        <label>Department *</label>
+                       <select
+                          id="department"
+                          class="form-select">
+
+                        <option value="">Select</option>
+                        <option>Engineering</option>
+                        <option>Marketing</option>
+                        <option>HR</option>
+                        <option>Finance</option>
+                        <option>Operations</option>
+
+                        </select>
+
+                          <small
+                          id="departmentError"
+                          class="error-message"></small>
+                    </div>
+
+                    <div class="col-md-6">
+                        <label>Designation *</label>
+                        <input id="designation" type="text" class="form-control" placeholder="e.g. Software Engineer">
+                        <small
+                        id="designationError"
+                        class="error-message"></small>
+                    </div>
+
+                    <div class="col-md-6">
+                        <label>Annual Salary (₹) *</label>
+                        <input id="salary" type="text" class="form-control" placeholder="e.g. 750000">
+                        <small
+                          id="salaryError"
+                          class="error-message"></small>
+                    </div>
+
+                    <div class="col-md-6">
+                        <label>Join Date *</label>
+                        <input id="joinDate" type="date" class="form-control">
+                        <small
+                            id="joinDateError"
+                            class="error-message"></small>
+                    </div>
+
+                    <div class="col-md-6">
+                        <label>Status *</label>
+                        <select
+                          id="status"
+                          class="form-select">
+
+                        <option value="">Select</option>
+                        <option>Active</option>
+                        <option>Inactive</option>
+
+                        </select>
+                        <small
+                          id="statusError"
+                          class="error-message"></small>
+                    </div>
+
+               
+            </div>
+
+            <!-- Footer -->
+            <div class="modal-footer custom-footer">
+                <button class="btn btn-light border-2 border-secondary" data-bs-dismiss="modal">Cancel</button>
+           <button id="saveEmployeeBtn"  class="btn btn-primary">Save Employee</button>
+            </div>
+             </form>
+
+        </div>
+    </div>
+</div>
+
+<!-- View Employee Modal -->
+
+
+<div class="modal fade" id="viewEmployeeModal">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content view-modal">
+
+      <!-- Header -->
+      <div class="modal-header view-header">
+        <h5 class="modal-title"><i class="bi bi-person-lines-fill" style="margin-right: 8px;"></i>Employee Details</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+      </div>
+      <input type="hidden" id="employeeId">
+      <!-- Body -->
+      <div class="modal-body text-center">
+
+        <!-- Avatar -->
+        <div class="avatar-circle" id="viewAvatar"></div>
+
+        <!-- Name -->
+        <h5 id="viewName" class="emp-name"></h5>
+        <span id="viewDepartment" class="badge role-badge"></span>
+
+        <!-- Info Grid -->
+        <div class="row mt-4 text-start info-grid">
+
+          <div class="col-6">
+            <small class="label">EMAIL</small>
+            <p id="viewEmail"></p>
+          </div>
+
+          <div class="col-6">
+            <small class="label">PHONE</small>
+            <p id="viewPhone"></p>
+          </div>
+
+          <div class="col-6">
+            <small class="label">DESIGNATION</small>
+            <p id="viewDesignation"></p>
+          </div>
+
+          <div class="col-6">
+            <small class="label">ANNUAL SALARY</small>
+            <p id="viewSalary" class="salary"></p>
+          </div>
+
+          <div class="col-6">
+            <small class="label">JOIN DATE</small>
+            <p id="viewJoinDate"></p>
+          </div>
+
+          <div class="col-6">
+            <small class="label">STATUS</small>
+            <span id="viewStatus" class="badge status-active"></span>
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- Footer -->
+      <div class="modal-footer justify-content-end">
+        <button class="btn btn-light border-2 border-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- Delete Confirmation Modal -->
+
+
+<div class="modal fade" id="deleteModal">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content delete-modal">
+
+      <!-- Header -->
+      <div class="modal-header delete-header">
+        <h5 class="modal-title">Confirm Delete</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+      </div>
+
+      <!-- Body -->
+      <div class="modal-body text-center">
+
+        <!-- Icon -->
+        <div class="delete-icon">
+          <i class="bi bi-person-x-fill"></i>
+        </div>
+
+        <!-- Message -->
+        <p class="delete-text">
+          Are you sure you want to delete<br>
+          <strong id="deleteEmployeeName"></strong>?
+        </p>
+
+        <small class="delete-warning">
+          This action cannot be undone.
+        </small>
+
+      </div>
+
+      <!-- Footer -->
+      <div class="modal-footer justify-content-center">
+        <button class="btn btn-light border-2 border-secondary" data-bs-dismiss="modal">Cancel</button>
+        <button id="confirmDeleteBtn" class="btn btn-danger">
+          <i class="bi bi-trash"></i> Yes, Delete
+        </button>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- TOAST CONTAINER -->
+
+        <div
+        id="toastContainer"
+        class="position-fixed bottom-0 end-0 p-3"
+        style="z-index:9999">
+
+        </div>
+
+        </div>
+        </div>
+
+
+<!-- JQUERY LINK -->
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+<!-- BOOTSTRAP JS LINK -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    
+<!--JS Scripts Links  -->
+    <!-- <script src="js/data.js"></script> -->
+     <script src="js/config.js"></script>
+    <script src="js/storageService.js"></script>
+    <script src="js/authService.js"></script>
+    <script src="js/employeeService.js"></script>
+    <script src="js/validationService.js"></script>
+    <script src="js/dashboardService.js"></script>
+    <script src="js/uiService.js"></script>
+    <script src="js/app.js"></script>
+  
+</body>
+</html>
