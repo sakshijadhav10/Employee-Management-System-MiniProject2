@@ -38,7 +38,7 @@ const uiService = (function () {
         <tr>
 
 
-
+<td>${emp.id}</td>
 <td>
   <div class="avatar-circle">
     ${initials}
